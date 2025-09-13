@@ -13,4 +13,6 @@ RUN npm install \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/*
 
-CMD ["node", "build/index.js"]
+EXPOSE 3033
+RUN npm install mcp-mermaid
+CMD ["npx", "-y", "mcp-mermaid", "-t", "streamable"]
